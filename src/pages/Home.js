@@ -2,9 +2,10 @@ import FoodCard from "../components/FoodCard";
 import FoodList from "../components/FoodList";
 import Header from "../components/Header";
 import { SectionContainer } from "../components/UI/Container";
-import { ContentXLarge } from "../components/UI/Text";
+import { ContentRegular, ContentXLarge } from "../components/UI/Text";
 import { useEffect, useState } from "react";
 import { GetFoodsFetch } from "../services/fetchFoods";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [foods, setFoods] = useState([]);
@@ -34,6 +35,10 @@ export default function Home() {
          ))}
         </FoodList>
       </SectionContainer>
+      <Footer>
+        <ContentRegular>FreshCart - Made by Alecx Adrian De la Cruz Lopez </ContentRegular>
+        <ContentRegular>© 2021</ContentRegular>
+      </Footer>
     </>
   );
 }

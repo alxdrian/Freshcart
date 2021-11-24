@@ -24,10 +24,29 @@ export const HeaderContainer = styled.header`;
   display: flex;
   width: calc(100% - 60px);
   padding: 10px 30px;
-  justify-content: center;
   align-items: center;
   background-color: #ffff;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    width: calc(100% - 20px);
+  }
+`;
+
+export const FooterContainer = styled.footer`;
+  display: flex;
+  width: calc(100% - 60px);
+  padding: 10px 30px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffff;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  ${props => props.fixed && `
+    position: fixed;
+    bottom: 0;
+  `}
+  
 
   @media (max-width: 768px) {
     padding: 10px;

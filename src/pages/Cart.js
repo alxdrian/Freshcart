@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import CartCard from "../components/CartCard";
 import FoodList from "../components/FoodList";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { CartIcon } from "../components/Icons";
 import { Container, SectionContainer } from "../components/UI/Container";
@@ -53,6 +54,7 @@ export default function Cart() {
           />
         </FoodList>
       </SectionContainer>
+      <Footer fixed={true} />
     </>
   );
 }
