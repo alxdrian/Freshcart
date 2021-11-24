@@ -38,17 +38,12 @@ const FoodDetails = styled(Container)`
   gap: 5px;
   flex-direction: column;
   width: 170px;
-
-  div {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  height: 100%;
 
   @media (max-width: 768px) {
-    padding: 10px 10px 15px 10px;
+    padding: 10px;
     width: 130px;
+    justify-content: space-between;
   }
 `;
 
@@ -72,7 +67,6 @@ const Description = styled.div`
     display: flex;
     justify-content: space-between;
     color: #4bbd2e;
-    font-weight: 600;
     cursor: pointer;
 
     svg {
@@ -86,20 +80,18 @@ const Description = styled.div`
     font-weight: 400;
     position: absolute;
     top: 20px;
-    max-height: 150px;
+    width: 100%;
+    padding: 10px;
+    left: -10px;
+    max-height: 80px;
     overflow: scroll;
 
     &::-webkit-scrollbar {
       display: none;
     }
 
-    p {
-      margin-top: 35px;
-    }
-
     @media (max-width: 768px) {
       background-color: #ffffff;
-      padding: 10px;
       z-index: 1;
       box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2);
       border-radius: 0 0 20px 20px;
@@ -124,10 +116,8 @@ export default function FoodCard({ name, price, image, description }) {
         <img src={image} alt={name} />
       </ImageContainer>
       <FoodDetails>
-        <div>
-          <HeadingMedium>{name}</HeadingMedium>
-          <Price>$ {price}</Price>
-        </div>
+        <HeadingMedium>{name}</HeadingMedium>
+        <Price>$ {price}</Price>
         <Description>
           <div onClick={toggleExpand}>
             <ContentSmall>Description</ContentSmall>

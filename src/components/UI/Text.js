@@ -17,6 +17,11 @@ export const HeadingMedium = styled.h3`
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   line-height: 32px;
+
+  @media (max-width: 768px) {
+    font-size: 18px; 
+    line-height: 24px;
+  }
 `;
 
 export const Content = styled.p`
