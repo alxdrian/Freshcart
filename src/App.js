@@ -16,6 +16,7 @@ const cssGlobal = css`
   body {
     background-color: #F6F6F9;
     display: flex;
+    flex-direction: column;
     justify-content: center;
   }
 `;
