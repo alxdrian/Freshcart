@@ -13,6 +13,12 @@ export const HeadingSmall = styled.h2`
   line-height: 24px;
 `;
 
+export const HeadingMedium = styled.h3`
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+`;
+
 export const Content = styled.p`
   font-family: 'Source Sans Pro', sans-serif;
 `
