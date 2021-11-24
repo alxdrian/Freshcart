@@ -52,3 +52,8 @@ export const ContentXSmall = styled(Content)`
   font-size: 12px;
   line-height: 18px;
 `
+
+export const Price = styled(ContentLarge)`
+  color: #4bbd2e;
+  font-weight: 600;
+`;

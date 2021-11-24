@@ -34,3 +34,32 @@ export const HeaderContainer = styled.header`;
     width: calc(100% - 20px);
   }
 `;
+
+export const ImageContainer = styled(Container)`
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
+`;
+
+export const ImageCartContainer = styled(ImageContainer)`
+  width: 180px;
+  height: 180px;
+
+  @media (max-width: 768px) {
+    width: 120px;
+    height: 120px;
+  }
+`;

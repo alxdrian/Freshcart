@@ -2,35 +2,10 @@ import styled from "@emotion/styled";
 import { ArrowUpIcon, ArrowDownIcon, CartIcon, PlusIcon } from "./Icons";
 import { IconButton } from "./UI/Button";
 import { Container } from "./UI/Container";
-import { ListItem } from "./UI/List";
-import { ContentLarge, ContentXSmall, ContentSmall, HeadingMedium } from "./UI/Text";
+import { FoodItem } from "./UI/List";
+import { Price, ContentXSmall, ContentSmall, HeadingMedium } from "./UI/Text";
+import { ImageContainer } from "./UI/Container";
 import { useState } from "react";
-
-const FoodItem = styled(ListItem)`
-  border-radius: 20px;
-  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2);
-  background-color: #ffff;
-  position: relative;
-`
-
-const ImageContainer = styled(Container)`
-  object-fit: cover;
-  width: 250px;
-  height: 250px;
-  border-radius: 20px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-  
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-  }
-
-  @media (max-width: 768px) {
-    width: 150px;
-    height: 150px;
-  }
-`;
 
 const FoodDetails = styled(Container)`
   padding: 20px;
@@ -45,11 +20,6 @@ const FoodDetails = styled(Container)`
     width: 130px;
     justify-content: space-between;
   }
-`;
-
-const Price = styled(ContentLarge)`
-  color: #4bbd2e;
-  font-weight: 600;
 `;
 
 const FoodIcon = styled(IconButton)`
