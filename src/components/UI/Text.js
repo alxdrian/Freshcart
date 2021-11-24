@@ -5,18 +5,21 @@ export const Title = styled.h1`
   font-size: 30px;
   line-height: 40px;
   text-align: center;
+  color: #333333;
 `;
 
 export const HeadingSmall = styled.h2`
   font-family: 'Lato', sans-serif;
   font-size: 18px; 
   line-height: 24px;
+  color: #333333;
 `;
 
 export const HeadingMedium = styled.h3`
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   line-height: 32px;
+  color: #333333;
 
   @media (max-width: 768px) {
     font-size: 18px; 

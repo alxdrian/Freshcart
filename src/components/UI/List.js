@@ -27,4 +27,9 @@ export const FoodItem = styled(ListItem)`
 `;
 
 export const CartItem = styled(ListItem)`
+  div.counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
 `;

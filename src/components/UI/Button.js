@@ -2,8 +2,9 @@ import styled from "@emotion/styled";
 
 export const Button = styled.button`
   display: flex;
-  gap: 10px;
+  gap: 5px;
   padding: 5px 10px;
+  height: 40px;
   justify-content: center;
   align-items: center;
   border: none;
@@ -12,6 +13,11 @@ export const Button = styled.button`
   color: #ffff;
   cursor: pointer;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const IconButton = styled(Button)`

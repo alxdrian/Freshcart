@@ -55,8 +55,8 @@ export const ImageContainer = styled(Container)`
 `;
 
 export const ImageCartContainer = styled(ImageContainer)`
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
 
   @media (max-width: 768px) {
     width: 120px;

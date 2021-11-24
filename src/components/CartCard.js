@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { Container, ImageCartContainer } from "./UI/Container";
 import { CartItem } from "./UI/List";
 import { HeadingMedium, Price } from "./UI/Text";
+import Counter from "./Counter";
 
 const CartDetails = styled(Container)`
   padding: 20px;
@@ -35,7 +36,9 @@ export default function CartCard({name, price, image}) {
           <Price>$ {price}</Price>
         </div>
       </CartDetails>
+      <div className="counter">
+        <Counter />
+      </div>
     </CartItem>
-
   );
 }
