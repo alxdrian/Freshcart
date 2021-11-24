@@ -16,6 +16,31 @@ export default function Home() {
             price={1000}
             image="https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg"
           />
+          <FoodCard
+            name="Pizza"
+            price={1000}
+            image="https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg"
+          />
+          <FoodCard
+            name="Pizza"
+            price={1000}
+            image="https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg"
+          />
+          <FoodCard
+            name="Pizza"
+            price={1000}
+            image="https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg"
+          />
+          <FoodCard
+            name="Pizza"
+            price={1000}
+            image="https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg"
+          />
+          <FoodCard
+            name="Pizza"
+            price={1000}
+            image="https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg"
+          />
         </FoodList>
       </SectionContainer>
     </>

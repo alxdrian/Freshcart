@@ -1,19 +1,23 @@
 import styled from "@emotion/styled";
+import { CartIcon, PlusIcon } from "./Icons";
+import { IconButton } from "./UI/Button";
 import { Container } from "./UI/Container";
 import { ListItem } from "./UI/List";
 import { ContentLarge, HeadingMedium } from "./UI/Text";
+import { useState } from "react";
 
 const FoodItem = styled(ListItem)`
-  width: 100%;
-  max-width: 250px;
+  min-width: 200px;
+  max-width: 200px;
   border-radius: 20px;
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2);
   background-color: #ffff;
+  position: relative;
 `
 
 const ImageContainer = styled(Container)`
   object-fit: contain;
-  height: 250px;
+  height: 200px;
   border-radius: 20px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
   
@@ -37,9 +41,16 @@ const FoodDetails = styled(Container)`
 const Price = styled(ContentLarge)`
   color: #4bbd2e;
   font-weight: 600;
-`
+`;
 
-export default function FoodCard({ name, description, price, image }) {
+const FoodIcon = styled(IconButton)`
+  top: 10px;
+  left: 10px;
+`;
+
+export default function FoodCard({ name, price, image }) {
+  const [isAdded, setIsAdded] = useState(false);
+
   return (
     <FoodItem>
       <ImageContainer>
@@ -51,6 +62,9 @@ export default function FoodCard({ name, description, price, image }) {
           <Price>$ {price}</Price>
         </div>
       </FoodDetails>
+      <FoodIcon>
+        {isAdded ? <CartIcon /> : <PlusIcon />}
+      </FoodIcon>
     </FoodItem>
   );
 }
