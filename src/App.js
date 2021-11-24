@@ -1,11 +1,15 @@
 import { css, Global } from "@emotion/react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Cart from "./pages/Cart";
 
 const cssGlobal = css`
-
   @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Lato&display=swap');
 
   * {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 0;
   }
   
@@ -14,20 +18,20 @@ const cssGlobal = css`
     display: flex;
     justify-content: center;
   }
-
-  main {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    min-width: 320px;
-    max-width: 1080px;
-  }
 `;
 
 function App() {
   return (
     <main>
       <Global styles={cssGlobal} />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
     </main>
   );
 }
