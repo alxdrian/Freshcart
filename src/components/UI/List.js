@@ -6,9 +6,16 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 export const ListItem = styled.li`
   display: flex;
-  flex-direction: column;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;

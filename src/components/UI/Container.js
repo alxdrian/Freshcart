@@ -12,7 +12,12 @@ export const SectionContainer = styled.section`
   width: calc(100% - 60px);
   padding: 30px;
   gap: 30px;
-  max-width: 1080px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    width: calc(100% - 20px);
+    gap: 10px;
+  }
 `;
 
 export const HeaderContainer = styled.header`;
@@ -23,4 +28,9 @@ export const HeaderContainer = styled.header`;
   align-items: center;
   background-color: #ffff;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    width: calc(100% - 20px);
+  }
 `;

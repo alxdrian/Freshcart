@@ -42,3 +42,8 @@ export const ContentSmall = styled(Content)`
   font-size: 14px;
   line-height: 24px;
 `
+
+export const ContentXSmall = styled(Content)`
+  font-size: 12px;
+  line-height: 18px;
+`
