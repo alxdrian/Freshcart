@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import background from "../../assets/images/background.jpg";
 
 export const Container = styled.div`
   margin: 0;
@@ -84,5 +85,38 @@ export const ImageCartContainer = styled(ImageContainer)`
   @media (max-width: 768px) {
     width: 120px;
     height: 120px;
+  }
+`;
+
+export const AlterPageContainer = styled.div`
+  background-image: url(${background});
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+`;
+
+export const FormContainer = styled.div`
+  padding: 30px 0;
+  background-color: #ffff;
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 20px;
+  margin: auto auto;
+  align-items: center;
+  max-height: 80vh;
+  overflow: scroll;
+  
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
   }
 `;

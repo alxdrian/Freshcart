@@ -3,23 +3,32 @@ import CartCard from "../components/CartCard";
 import FoodList from "../components/FoodList";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { CartIcon, CreditIcon, DolarIcon } from "../components/Icons";
+import { CartIcon, CreditIcon, DolarIcon, TrashIcon } from "../components/Icons";
 import { Container, SectionContainer } from "../components/UI/Container";
 import { Title, ContentLarge, HeadingSmall, HeadingMedium, Price } from "../components/UI/Text";
-import { Button } from "../components/UI/Button";
+import { Button, IconButton } from "../components/UI/Button";
 
 const TitleContainer = styled(Container)`
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
   height: 40px;
-  gap: 20px;
   padding: 10px 0;
   border-bottom: 2px solid #e0e0e0;
   margin-bottom: 10px;
 
+  div {
+    display: flex;
+    gap: 20px;
+  }
+
   svg {
     width: 40px;
     color: #333333;
+  }
+
+  button svg {
+    width: 20px;
+    color: #ffffff;
   }
 `;
 
@@ -41,8 +50,13 @@ export default function Cart() {
       <Header />
       <SectionContainer>
         <TitleContainer>
-          <Title>My Cart</Title>
-          <CartIcon/>
+          <div>
+            <Title>My Cart</Title>
+            <CartIcon/>
+          </div>
+          <Button>
+            <TrashIcon /><ContentLarge>Delete</ContentLarge>
+          </Button>
         </TitleContainer>
         <FoodList>
           <CartCard
