@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { css, Global } from "@emotion/react";
+
+const cssGlobal = css`
+
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Lato&display=swap');
+
+  * {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+  }
+  
+  body {
+    background-color: #F6F6F9;
+    display: flex;
+    justify-content: center;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    min-width: 320px;
+    max-width: 1080px;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Global styles={cssGlobal} />
+    </main>
   );
 }
 
