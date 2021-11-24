@@ -3,9 +3,10 @@ import CartCard from "../components/CartCard";
 import FoodList from "../components/FoodList";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { CartIcon } from "../components/Icons";
+import { CartIcon, CreditIcon, DolarIcon } from "../components/Icons";
 import { Container, SectionContainer } from "../components/UI/Container";
-import { Title } from "../components/UI/Text";
+import { Title, ContentLarge, HeadingSmall, HeadingMedium, Price } from "../components/UI/Text";
+import { Button } from "../components/UI/Button";
 
 const TitleContainer = styled(Container)`
   width: 100%;
@@ -19,6 +20,18 @@ const TitleContainer = styled(Container)`
   svg {
     width: 40px;
     color: #333333;
+  }
+`;
+
+const TotalContainer = styled(Container)`
+  gap: 10px;
+  align-items: center;
+  height: 40px;
+
+  svg {
+    color: #333333;
+    height: 30px;
+    width: 30px;
   }
 `;
 
@@ -54,7 +67,16 @@ export default function Cart() {
           />
         </FoodList>
       </SectionContainer>
-      <Footer fixed={true} />
+      <Footer fixed={true}>
+        <TotalContainer>
+          <DolarIcon />
+          <HeadingMedium>TOTAL</HeadingMedium>
+          <Price>$1000</Price>
+        </TotalContainer>
+        <Button>
+          <CreditIcon /><ContentLarge>Pay order</ContentLarge>
+        </Button>
+      </Footer>
     </>
   );
 }

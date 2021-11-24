@@ -24,6 +24,25 @@ const CartDetails = styled(Container)`
   }
 `;
 
+const CounterContainer = styled.div`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  background-color: #e6e6e6;
+  border-radius: 10px;
+
+  @media (max-width: 768px) {
+    bottom: 7px;
+    right: 15px;
+ }
+`
+
+const PartialPrice = styled.div`
+  padding: 0 7px 0 3px;
+  color: #333333;
+`
+
 export default function CartCard({name, price, image}) {
   return (
     <CartItem>
@@ -36,9 +55,10 @@ export default function CartCard({name, price, image}) {
           <Price>$ {price}</Price>
         </div>
       </CartDetails>
-      <div className="counter">
+      <CounterContainer>
         <Counter />
-      </div>
+        <PartialPrice>$ 10000</PartialPrice>
+      </CounterContainer>
     </CartItem>
   );
 }

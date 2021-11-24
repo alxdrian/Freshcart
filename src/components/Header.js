@@ -13,6 +13,7 @@ const HeaderContent = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  max-width: 1500px;
 
   a {
     text-decoration: none;

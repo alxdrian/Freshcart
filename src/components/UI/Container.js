@@ -18,6 +18,9 @@ export const SectionContainer = styled.section`
     width: calc(100% - 20px);
     gap: 10px;
   }
+
+  max-width: 1500px;
+  margin-bottom: 60px;
 `;
 
 export const HeaderContainer = styled.header`;
@@ -25,6 +28,7 @@ export const HeaderContainer = styled.header`;
   width: calc(100% - 60px);
   padding: 10px 30px;
   align-items: center;
+  justify-content: center;
   background-color: #ffff;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 
@@ -38,7 +42,7 @@ export const FooterContainer = styled.footer`;
   display: flex;
   width: calc(100% - 60px);
   padding: 10px 30px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #ffff;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
