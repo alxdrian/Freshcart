@@ -27,3 +27,26 @@ export function LogoutFetch() {
     .catch(error => console.log(error))
   )
 }
+
+export function SignupFetch(form) {
+  return (
+    fetch(`${BASE_URL}/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user: {
+          name: form.name,
+          surname: form.surname,
+          email: form.email,
+          address: form.address,
+          password: form.password,
+          password_confirmation: form.password_confirmation
+        }
+      })
+    })
+    .then(response => response.json())
+    .catch(error => console.log(error))
+  )
+}
