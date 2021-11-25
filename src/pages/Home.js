@@ -2,9 +2,9 @@ import FoodCard from "../components/FoodCard";
 import FoodList from "../components/FoodList";
 import Header from "../components/Header";
 import { SectionContainer } from "../components/UI/Container";
-import { ContentRegular, ContentXLarge} from "../components/UI/Text";
+import { ContentRegular, ContentXLarge, Title} from "../components/UI/Text";
 import { useEffect, useState } from "react";
-import { GetFoodsFetch } from "../services/fetchFoods";
+import { GetFoodsFetch } from "../services/FetchFoods";
 import Footer from "../components/Footer";
 import Hero, { HeroSlogan } from "../components/Hero";
 import { SearchForm } from "../components/UI/SearchForm";
@@ -28,7 +28,7 @@ export default function Home() {
         <SearchForm />
       </Hero>
       <SectionContainer>
-        <ContentXLarge>Enjoy our foods...</ContentXLarge>
+        <Title>Enjoy our foods...</Title>
         <FoodList>
           {foods?.map(food => (
             <FoodCard

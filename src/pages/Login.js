@@ -3,30 +3,46 @@ import { Button } from "../components/UI/Button";
 import { AlterPageContainer, FormContainer } from "../components/UI/Container";
 import { Form, FormControl } from "../components/UI/Form";
 import { ContentXLarge, Title } from "../components/UI/Text";
+import { useState } from "react";
+import { LoginFetch } from "../services/FetchUsers";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    console.log(email, password);
+    const token = await LoginFetch(email, password);
+    console.log(token);
+ };
+
   return (
     <AlterPageContainer>
       <FormContainer>
         <Title>Login</Title>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <FormControl 
             type="email"
             id="email"
             name="Email"
             placeholder="somebody@mail.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <FormControl 
             type="password"
             id="password"
             name="Password"
             placeholder="********"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
+          <Button type="submit">
+            <LoginIcon />
+            <ContentXLarge>Login</ContentXLarge>
+          </Button>
         </Form> 
-        <Button>
-          <LoginIcon />
-          <ContentXLarge>Login</ContentXLarge>
-        </Button>
       </FormContainer>
     </AlterPageContainer>
   );

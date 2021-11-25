@@ -6,4 +6,4 @@ export function GetFoodsFetch() {
     .then(response => response.json())
     .catch(error => console.log(error))
   )
-}    
+}
