@@ -5,16 +5,20 @@ import { Form, FormControl } from "../components/UI/Form";
 import { ContentXLarge, Title } from "../components/UI/Text";
 import { useState } from "react";
 import { LoginFetch } from "../services/FetchUsers";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(email, password);
-    const token = await LoginFetch(email, password);
-    console.log(token);
+    const response = await LoginFetch(email, password);
+    if (response.jti) {
+      sessionStorage.setItem("token", response.jti);
+      navigate("/");
+    }
  };
 
   return (

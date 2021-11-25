@@ -2,7 +2,7 @@ import FoodCard from "../components/FoodCard";
 import FoodList from "../components/FoodList";
 import Header from "../components/Header";
 import { SectionContainer } from "../components/UI/Container";
-import { ContentRegular, ContentXLarge, Title} from "../components/UI/Text";
+import { ContentRegular, Title} from "../components/UI/Text";
 import { useEffect, useState } from "react";
 import { GetFoodsFetch } from "../services/FetchFoods";
 import Footer from "../components/Footer";

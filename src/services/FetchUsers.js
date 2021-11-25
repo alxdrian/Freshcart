@@ -5,7 +5,7 @@ export function LoginFetch(email, password) {
     fetch(`${BASE_URL}/login`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         user: {
@@ -14,14 +14,7 @@ export function LoginFetch(email, password) {
         }
       })
     })
-    .then(response => {
-      for (let pair of response.headers.entries()) {
-        if (pair[0] === "Authorization") {
-          localStorage.setItem("token", pair[1]);
-        }
-      }
-      return response.json();
-    })
+    .then(response => response.json())
     .catch(error => console.log(error))
   )
 }

@@ -29,7 +29,7 @@ export const HeroSlogan = styled.p`
  }
 `;
 
-export const HeroContent = styled.p`
+export const HeroContent = styled.div`
   color: #3f3f3f;
   width: calc(100% - 10px);
   background-color: #f6f6f9a1;

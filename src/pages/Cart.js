@@ -5,8 +5,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { CartIcon, CreditIcon, DolarIcon, TrashIcon } from "../components/Icons";
 import { Container, SectionContainer } from "../components/UI/Container";
-import { Title, ContentLarge, HeadingSmall, HeadingMedium, Price } from "../components/UI/Text";
-import { Button, IconButton } from "../components/UI/Button";
+import { Title, ContentLarge, HeadingMedium, Price } from "../components/UI/Text";
+import { Button } from "../components/UI/Button";
 
 const TitleContainer = styled(Container)`
   width: 100%;

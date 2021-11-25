@@ -51,16 +51,23 @@ export default function Header() {
           <Logo><BagIcon/> FreshCart</Logo>
         </Link>
         <ButtonsContainer>
-          <Link to="/login">
-            <Button><LoginIcon /><ContentLarge>Login</ContentLarge></Button>
-          </Link>
-          <Link to="/signup">
-            <Button><SignupIcon /><ContentLarge>Signup</ContentLarge></Button>
-          </Link>
-          <Link to="/cart">
-            <Button><CartIcon /><ContentLarge>Cart</ContentLarge></Button>
-          </Link>
-          <Button><LogoutIcon /><ContentLarge>Logout</ContentLarge></Button>
+          {sessionStorage.getItem("token") ? (
+          <>
+            <Link to="/cart">
+              <Button><CartIcon /><ContentLarge>Cart</ContentLarge></Button>
+            </Link>
+            <Button><LogoutIcon /><ContentLarge>Logout</ContentLarge></Button>
+          </>
+          ) : (
+          <>
+            <Link to="/login">
+              <Button><LoginIcon /><ContentLarge>Login</ContentLarge></Button>
+            </Link>
+            <Link to="/signup">
+              <Button><SignupIcon /><ContentLarge>Signup</ContentLarge></Button>
+            </Link>
+          </>
+          )}
         </ButtonsContainer>
       </HeaderContent>
     </HeaderContainer>
