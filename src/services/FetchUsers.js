@@ -18,3 +18,12 @@ export function LoginFetch(email, password) {
     .catch(error => console.log(error))
   )
 }
+
+export function LogoutFetch() {
+  return (
+    fetch(`${BASE_URL}/logout`, {
+      method: "DELETE",
+    })
+    .catch(error => console.log(error))
+  )
+}

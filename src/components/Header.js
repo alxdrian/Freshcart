@@ -5,6 +5,8 @@ import { ContentLarge } from "./UI/Text";
 import { Title } from "./UI/Text";
 import { BagIcon, CartIcon, LoginIcon, LogoutIcon, SignupIcon } from "./Icons";
 import { Link } from "react-router-dom";
+import { LogoutFetch } from "../services/FetchUsers";
+import { useState } from "react";
 
 const HeaderContent = styled.div`
   width: 100%;
@@ -44,6 +46,16 @@ const Logo = styled(Title)`
 `;
 
 export default function Header() {
+  const [session, setSession] = useState(sessionStorage.getItem("token"));
+
+  async function handleLogout() {
+    const response = await LogoutFetch();
+    if (response.ok) {
+      sessionStorage.removeItem("token");
+      setSession(null);
+    }
+  }
+
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -51,12 +63,12 @@ export default function Header() {
           <Logo><BagIcon/> FreshCart</Logo>
         </Link>
         <ButtonsContainer>
-          {sessionStorage.getItem("token") ? (
+          {session ? (
           <>
             <Link to="/cart">
               <Button><CartIcon /><ContentLarge>Cart</ContentLarge></Button>
             </Link>
-            <Button><LogoutIcon /><ContentLarge>Logout</ContentLarge></Button>
+            <Button onClick={handleLogout}><LogoutIcon /><ContentLarge>Logout</ContentLarge></Button>
           </>
           ) : (
           <>
