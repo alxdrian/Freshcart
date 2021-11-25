@@ -77,7 +77,7 @@ const Description = styled.div`
 
 export default function FoodCard({ id, name, price, image, description }) {
   const orderData = useOrderContext();
-  const [isAdded, setIsAdded] = useState(orderData.foods.filter(item => item.id === id).length != 0);
+  const [isAdded, setIsAdded] = useState(orderData.foods.filter(item => item.id === id).length !== 0);
   const [isExpanded, setIsExpanded] = useState(false);
 
   function toggleExpand(e) {
@@ -118,14 +118,16 @@ export default function FoodCard({ id, name, price, image, description }) {
           }
         </Description>
       </FoodDetails>
-      <FoodIcon>
-        {isAdded ? 
-          <Link to="/cart">
+      {isAdded ? 
+        <Link to="/cart">
+          <FoodIcon>
             <CartIcon />
-          </Link> : 
-          <PlusIcon onClick={handleAddFood}/>
-        }
-      </FoodIcon>
+          </FoodIcon>
+        </Link> : 
+        <FoodIcon onClick={handleAddFood}>
+          <PlusIcon />
+        </FoodIcon>
+      }
     </FoodItem>
   );
 }
