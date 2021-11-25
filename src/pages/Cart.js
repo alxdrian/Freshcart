@@ -84,7 +84,7 @@ export default function Cart() {
         <TotalContainer>
           <DolarIcon />
           <HeadingMedium>TOTAL</HeadingMedium>
-          <Price>$1000</Price>
+          <Price>$ {order.reduce((acc, food) => acc + food.price * food.count, 0)}</Price>
         </TotalContainer>
         <Button>
           <CreditIcon /><ContentLarge>Pay order</ContentLarge>
