@@ -54,6 +54,11 @@ export default function Cart() {
     setOrder(orderData.foods);
   }, [orderData]);
 
+  function handleDelete() {
+    setOrder([]);
+    orderData.cleanOrder();
+  }
+
   return (
     <>
       <Header />
@@ -63,7 +68,7 @@ export default function Cart() {
             <Title>My Cart</Title>
             <CartIcon/>
           </div>
-          <Button>
+          <Button onClick={handleDelete}>
             <TrashIcon /><ContentLarge>Delete</ContentLarge>
           </Button>
         </TitleContainer>

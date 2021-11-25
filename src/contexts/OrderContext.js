@@ -6,6 +6,7 @@ const OrderContext = createContext({
   addFood: () => {},
   removeFood: () => {},
   changeCount: () => {},
+  cleanOrder: () => {},
 });
 
 export function useOrderContext() {
@@ -31,11 +32,16 @@ export default function OrderProvider({ children }) {
     dispatch({ type: "CHANGE_COUNT", foodId, count });
   }
 
+  function cleanOrder() {
+    dispatch({ type: "CLEAN_ORDER" });
+  }
+
   const value = {
     ...order,
     addFood,
     removeFood,
     changeCount,
+    cleanOrder,
   };
 
   return (

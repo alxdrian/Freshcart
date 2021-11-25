@@ -3,6 +3,7 @@ import { useReducer } from "react";
 const ADD_FOOD = "ADD_FOOD";
 const REMOVE_FOOD = "REMOVE_FOOD";
 const CHANGE_COUNT = "CHANGE_COUNT";
+const CLEAN_ORDER = "CLEAN_ORDER";
 
 function orderReducer(state, action) {
   switch (action.type) {
@@ -32,6 +33,12 @@ function orderReducer(state, action) {
       return {
         ...state,
         foods: foods,
+      };
+    case CLEAN_ORDER:
+      localStorage.removeItem("foods");
+      return {
+        ...state,
+        foods: [],
       };
     default:
       return state;
