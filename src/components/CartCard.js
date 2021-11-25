@@ -43,7 +43,7 @@ const PartialPrice = styled.div`
   color: #333333;
 `
 
-export default function CartCard({name, price, image}) {
+export default function CartCard({id, name, price, image, count}) {
   return (
     <CartItem>
       <ImageCartContainer>
@@ -56,8 +56,8 @@ export default function CartCard({name, price, image}) {
         </div>
       </CartDetails>
       <CounterContainer>
-        <Counter />
-        <PartialPrice>$ 10000</PartialPrice>
+        <Counter id={id} count={count}/>
+        <PartialPrice>$ {price * count}</PartialPrice>
       </CounterContainer>
     </CartItem>
   );

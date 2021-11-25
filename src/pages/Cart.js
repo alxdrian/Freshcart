@@ -7,6 +7,8 @@ import { CartIcon, CreditIcon, DolarIcon, TrashIcon } from "../components/Icons"
 import { Container, SectionContainer } from "../components/UI/Container";
 import { Title, ContentLarge, HeadingMedium, Price } from "../components/UI/Text";
 import { Button } from "../components/UI/Button";
+import { useOrderContext } from "../contexts/OrderContext";
+import { useEffect, useState } from "react";
 
 const TitleContainer = styled(Container)`
   width: 100%;
@@ -45,6 +47,13 @@ const TotalContainer = styled(Container)`
 `;
 
 export default function Cart() {
+  const orderData = useOrderContext();
+  const [order, setOrder] = useState([]);
+
+  useEffect(() => {
+    setOrder(orderData.foods);
+  }, [orderData]);
+
   return (
     <>
       <Header />
@@ -59,26 +68,16 @@ export default function Cart() {
           </Button>
         </TitleContainer>
         <FoodList>
-          <CartCard
-            image="https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg"
-            name="Lamb tomato and sweet spices"
-            price={1000}
-          />
-          <CartCard
-            image="https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg"
-            name="Lamb tomato and sweet spices"
-            price={1000}
-          />
-          <CartCard
-            image="https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg"
-            name="Lamb tomato and sweet spices"
-            price={1000}
-          />
-          <CartCard
-            image="https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg"
-            name="Lamb tomato and sweet spices"
-            price={1000}
-          />
+          {order.map((food) => 
+            <CartCard
+              key={food.id}
+              id={food.id}
+              name={food.name}
+              price={food.price}
+              image={food.image}
+              count={food.count}
+            />
+           )}
         </FoodList>
       </SectionContainer>
       <Footer fixed={true}>
