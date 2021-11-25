@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { SectionContainer } from "../components/UI/Container";
 import { ContentRegular, Title} from "../components/UI/Text";
 import { useEffect, useState } from "react";
-import { GetFoodsFetch } from "../services/FetchFoods";
+import { FoodsFetch } from "../services/FetchFoods";
 import Footer from "../components/Footer";
 import Hero, { HeroSlogan } from "../components/Hero";
 import { SearchForm } from "../components/UI/SearchForm";
@@ -14,7 +14,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchFoods = async () => {
-      const response = await GetFoodsFetch();
+      const response = await FoodsFetch();
       setFoods(response);
     };
     fetchFoods();

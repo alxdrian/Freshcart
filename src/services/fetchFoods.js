@@ -1,6 +1,6 @@
 const BASE_URL = "https://freshcart-backend.herokuapp.com";
 
-export function GetFoodsFetch() {
+export function FoodsFetch() {
   return (
     fetch(`${BASE_URL}/foods`)
     .then(response => response.json())
