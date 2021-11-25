@@ -2,10 +2,12 @@ import FoodCard from "../components/FoodCard";
 import FoodList from "../components/FoodList";
 import Header from "../components/Header";
 import { SectionContainer } from "../components/UI/Container";
-import { ContentRegular, ContentXLarge } from "../components/UI/Text";
+import { ContentRegular, ContentXLarge} from "../components/UI/Text";
 import { useEffect, useState } from "react";
 import { GetFoodsFetch } from "../services/fetchFoods";
 import Footer from "../components/Footer";
+import Hero, { HeroSlogan } from "../components/Hero";
+import { SearchForm } from "../components/UI/SearchForm";
 
 export default function Home() {
   const [foods, setFoods] = useState([]);
@@ -21,6 +23,10 @@ export default function Home() {
   return (
     <>
       <Header />
+      <Hero>
+        <HeroSlogan>Find your favorite dessert...</HeroSlogan>
+        <SearchForm />
+      </Hero>
       <SectionContainer>
         <ContentXLarge>Enjoy our foods...</ContentXLarge>
         <FoodList>

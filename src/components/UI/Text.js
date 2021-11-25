@@ -29,12 +29,12 @@ export const HeadingMedium = styled.h3`
 
 export const Content = styled.p`
   font-family: 'Source Sans Pro', sans-serif;
-`
+`;
 
 export const ContentXLarge = styled(Content)`
   font-size: 20px;
   line-height: 32px;
-`
+`;
 
 export const ContentLarge = styled(Content)`
   font-size: 18px;

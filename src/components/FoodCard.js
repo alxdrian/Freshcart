@@ -69,8 +69,6 @@ const Description = styled.div`
   }
 `;
 
-
-
 export default function FoodCard({ name, price, image, description }) {
   const [isAdded, setIsAdded] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);

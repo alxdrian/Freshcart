@@ -99,7 +99,7 @@ export const AlterPageContainer = styled.div`
 
 export const FormContainer = styled.div`
   padding: 30px 0;
-  background-color: #ffff;
+  background-color: #f6f6f9a1;
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   display: flex;
