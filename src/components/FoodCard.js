@@ -6,6 +6,8 @@ import { FoodItem } from "./UI/List";
 import { Price, ContentXSmall, ContentSmall, HeadingMedium } from "./UI/Text";
 import { ImageContainer } from "./UI/Container";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useOrderContext } from "../contexts/OrderContext";
 
 const FoodDetails = styled(Container)`
   padding: 20px;
@@ -26,6 +28,10 @@ const FoodIcon = styled(IconButton)`
   top: 10px;
   left: 10px;
   cursor: pointer;
+
+  a {
+    color: #ffffff;
+  }
 `;
 
 const Description = styled.div`
@@ -69,13 +75,27 @@ const Description = styled.div`
   }
 `;
 
-export default function FoodCard({ name, price, image, description }) {
-  const [isAdded, setIsAdded] = useState(false);
+export default function FoodCard({ id, name, price, image, description }) {
+  const orderData = useOrderContext();
+  const [isAdded, setIsAdded] = useState(orderData.foods.filter(item => item.id === id).length != 0);
   const [isExpanded, setIsExpanded] = useState(false);
 
   function toggleExpand(e) {
     e.preventDefault();
     setIsExpanded(!isExpanded);
+  }
+
+  function handleAddFood(e) {
+    e.preventDefault();
+    const food = {
+      id: id,
+      name: name,
+      price: price,
+      image: image,
+      count: 1,
+    }
+    orderData.addFood(food)
+    setIsAdded(!isAdded);
   }
 
   return (
@@ -99,7 +119,12 @@ export default function FoodCard({ name, price, image, description }) {
         </Description>
       </FoodDetails>
       <FoodIcon>
-        {isAdded ? <CartIcon /> : <PlusIcon />}
+        {isAdded ? 
+          <Link to="/cart">
+            <CartIcon />
+          </Link> : 
+          <PlusIcon onClick={handleAddFood}/>
+        }
       </FoodIcon>
     </FoodItem>
   );

@@ -33,6 +33,7 @@ export default function Home() {
           {foods?.map(food => (
             <FoodCard
               key={food.id}
+              id={food.id}
               name={food.name}
               price={food.price}
               image={food.image}
