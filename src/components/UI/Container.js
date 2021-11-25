@@ -4,6 +4,7 @@ import background from "../../assets/images/background.jpg";
 export const Container = styled.div`
   margin: 0;
   display: flex;
+  gap: 20px;
 `;
 
 export const SectionContainer = styled.section`
@@ -110,7 +111,7 @@ export const FormContainer = styled.div`
   align-items: center;
   max-height: 80vh;
   overflow: scroll;
-  
+  position: relative;
 
   &::-webkit-scrollbar {
     display: none;

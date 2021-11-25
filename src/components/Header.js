@@ -52,6 +52,7 @@ export default function Header() {
     const response = await LogoutFetch();
     if (response.ok) {
       sessionStorage.removeItem("token");
+      localStorage.removeItem("foods");
       setSession(null);
     }
   }

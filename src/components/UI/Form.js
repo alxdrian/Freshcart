@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { ContentSmall } from "./Text";
+import { ContentLarge } from "./Text";
 
 const Container = styled.div`
   display: flex;
@@ -7,22 +7,31 @@ const Container = styled.div`
   gap: 4px;
   width: 80%;
   height: fit-content;
+  font-family: "Lato", sans-serif;
+
+  label {
+    color: #333333;
+    font-weight: 600;
+  }
+
   input {
     height: 40px;
-    background: #FFFFFF;
-    border: 1px solid #4bbd2e;
+    background: #f6f6f987;
+    border: none;
+    border-bottom: 2px solid #4bbd2e;
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: 20px;
     padding: 8px 16px;
     color: #4bbd2e;
   }
+  
   input:focus {
     outline: none;
-    border: 1px solid #4bbd2e;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
   }
+
   input::placeholder {
-    color: #BDBDBD;
+    color: gray;
   }
 `
 
@@ -40,7 +49,7 @@ export function FormControl(props) {
   return (
     <Container>
       <label htmlFor={name}>
-        <ContentSmall>{props.name}</ContentSmall>
+        <ContentLarge>{props.name}</ContentLarge>
       </label>
       <input
         type={props.type}

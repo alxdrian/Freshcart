@@ -32,6 +32,11 @@ const FoodIcon = styled(IconButton)`
   a {
     color: #ffffff;
   }
+
+  @media (max-width: 768px) {
+    top: 5px;
+    left: 5px;
+  }
 `;
 
 const Description = styled.div`
@@ -87,15 +92,19 @@ export default function FoodCard({ id, name, price, image, description }) {
 
   function handleAddFood(e) {
     e.preventDefault();
-    const food = {
-      id: id,
-      name: name,
-      price: price,
-      image: image,
-      count: 1,
+    if (sessionStorage.getItem("token")) {
+      const food = {
+        id: id,
+        name: name,
+        price: price,
+        image: image,
+        count: 1,
+      }
+      orderData.addFood(food)
+      setIsAdded(!isAdded);
+    } else {
+      alert("Please login to add food to cart");
     }
-    orderData.addFood(food)
-    setIsAdded(!isAdded);
   }
 
   return (

@@ -1,6 +1,6 @@
-import { LoginIcon } from "../components/Icons";
-import { Button } from "../components/UI/Button";
-import { AlterPageContainer, FormContainer } from "../components/UI/Container";
+import { LoginIcon, HomeIcon, SignupIcon } from "../components/Icons";
+import { Button, HomeButton } from "../components/UI/Button";
+import { AlterPageContainer, Container, FormContainer } from "../components/UI/Container";
 import { Form, FormControl } from "../components/UI/Form";
 import { ContentXLarge, Title } from "../components/UI/Text";
 import { useState } from "react";
@@ -42,11 +42,20 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button type="submit">
-            <LoginIcon />
-            <ContentXLarge>Login</ContentXLarge>
-          </Button>
-        </Form> 
+          <Container>
+            <Button type="submit">
+              <LoginIcon />
+              <ContentXLarge>Login</ContentXLarge>
+            </Button>
+            <Button onClick={()=> navigate("/signup")}>
+              <SignupIcon />
+              <ContentXLarge>Signup</ContentXLarge>
+            </Button>
+          </Container>
+        </Form>
+        <HomeButton onClick={() => navigate("/")}>
+          <HomeIcon />
+        </HomeButton>
       </FormContainer>
     </AlterPageContainer>
   );

@@ -31,3 +31,8 @@ export const IconButton = styled(Button)`
     width: 30px;
   }
 `;
+
+export const HomeButton = styled(IconButton)`
+  top: 10px;
+  right: 10px;
+`;

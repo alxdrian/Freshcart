@@ -1,10 +1,13 @@
-import { SignupIcon } from "../components/Icons";
-import { Button } from "../components/UI/Button";
-import { AlterPageContainer, FormContainer } from "../components/UI/Container";
+import { SignupIcon, HomeIcon, LoginIcon } from "../components/Icons";
+import { Button, HomeButton } from "../components/UI/Button";
+import { AlterPageContainer, FormContainer, Container } from "../components/UI/Container";
 import { Form, FormControl } from "../components/UI/Form";
 import { ContentXLarge, Title } from "../components/UI/Text";
+import { useNavigate } from "react-router";
 
 export default function Signup() {
+  const navigate = useNavigate();
+
   return (
     <AlterPageContainer>
       <FormContainer>
@@ -46,11 +49,20 @@ export default function Signup() {
             name="Password Confirmation"
             placeholder="********"
           />
+          <Container>
+            <Button>
+              <SignupIcon />
+              <ContentXLarge>Signup</ContentXLarge>
+            </Button>
+            <Button onClick={() => navigate("/login")}>
+              <LoginIcon />
+              <ContentXLarge>Login</ContentXLarge>
+          </Button>
+          </Container>
         </Form>
-        <Button>
-          <SignupIcon />
-          <ContentXLarge>Signup</ContentXLarge>
-        </Button>
+        <HomeButton onClick={() => navigate("/")}>
+          <HomeIcon />
+        </HomeButton>
       </FormContainer>
     </AlterPageContainer>
   );
