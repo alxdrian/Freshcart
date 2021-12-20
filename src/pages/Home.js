@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { SectionContainer } from "../components/UI/Container";
 import { ContentRegular, Title} from "../components/UI/Text";
 import { useEffect, useState } from "react";
-import FoodsFetch from "../services/FetchFoods.js";
+import FoodsFetch from "../services/FetchFoods";
 import Footer from "../components/Footer";
 import Hero, { HeroSlogan } from "../components/Hero";
 import { SearchForm } from "../components/UI/SearchForm";

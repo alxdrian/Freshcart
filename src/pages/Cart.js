@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { CartIcon, CreditIcon, DolarIcon, TrashIcon } from "../components/Icons";
 import { Container, SectionContainer } from "../components/UI/Container";
-import { Title, ContentLarge, HeadingMedium, Price } from "../components/UI/Text";
+import { Title, ContentXLarge, ContentLarge, HeadingMedium, Price } from "../components/UI/Text";
 import { Button } from "../components/UI/Button";
 import { useOrderContext } from "../contexts/OrderContext";
 import { useEffect, useState } from "react";
@@ -73,6 +73,7 @@ export default function Cart() {
           </Button>
         </TitleContainer>
         <FoodList>
+          {order.length === 0 && <ContentXLarge>Your cart is empty</ContentXLarge>}
           {order.map((food) => 
             <CartCard
               key={food.id}
